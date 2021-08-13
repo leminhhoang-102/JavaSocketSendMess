@@ -49,7 +49,8 @@ public class Main
                 String decrypted_msg = ac.decryptText(strFromClient, publicKey);
                 System.out.println("client says: " + decrypted_msg);
                 strToClient = br.readLine();
-                dout.writeUTF(strToClient);
+                String encrypted_msg = ac.encryptText(strToClient, privateKey);
+                dout.writeUTF(encrypted_msg);
                 dout.flush();
             }
         }

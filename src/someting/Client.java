@@ -45,7 +45,8 @@ public class Client
                 dout.writeUTF(encrypted_msg);
                 dout.flush();
                 strToClient = din.readUTF();
-                System.out.println("Server says: " + strToClient);
+                String decrypted_msg = ac.decryptText(strToClient, publicKey);
+                System.out.println("Server says: " + decrypted_msg);
             }
 
         }
